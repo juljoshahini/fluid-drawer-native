@@ -81,7 +81,7 @@ interface FluidDrawerNativeProps {
             setRenderComponent(true);
           }
       Animated.timing(translateYAnim, {
-        toValue: open ? 0 : 350,
+        toValue: open ? 0 : drawerHeight,
         duration: 300,
         useNativeDriver: true,
       }).start();
@@ -126,7 +126,7 @@ interface FluidDrawerNativeProps {
     }, []);
     
     return renderComponent?(
-        <Animated.View style={[styles.container,backdropStyle]}>
+        <Animated.View style={[styles.container, { opacity: opacityAnim }, backdropStyle]}>
             {backdropTouchable ? (
                 <TouchableOpacity style={styles.backdropTouchSurface} onPress={onClose} />
             ) : (

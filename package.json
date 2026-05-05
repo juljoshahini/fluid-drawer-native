@@ -1,6 +1,6 @@
 {
   "name": "@builddiv/fluid-drawer-native",
-  "version": "0.5.0",
+  "version": "0.7.1-fix.1",
   "description": "A highly customizable, fluid, and native-feeling drawer component for React Native. Supports touch gestures, dynamic height adjustments, and integrates seamlessly with device keyboards.",
   "main": "dist/index.js",
   "keywords": [
@@ -16,6 +16,8 @@
     "pan-responder"
   ],
   "scripts": {
+    "build": "babel src --out-dir dist --extensions .ts,.tsx --copy-files",
+    "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
